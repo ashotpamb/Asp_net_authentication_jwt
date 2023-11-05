@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "xKGpgVYV8/pmliot94a9CfXkbRBE7KIEj5CCi5UNKMI=",
+  "Source": "PingChecker",
+  "BasePath": "_content/PingChecker",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
