@@ -14,7 +14,7 @@ namespace PingChecker.Services
         {
             _configuration = configuration;
 
-        }  
+        }
 
         public string GenerateJwtToken(string userId)
         {

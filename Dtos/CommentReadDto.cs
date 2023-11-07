@@ -3,12 +3,9 @@ using AutoMapper;
 
 namespace PingChecker.Dtos
 {
-    public class CommentCreateDto
+    public class CommentReadDto
     {
-        [Required]
         public string CommentData { get; set; }
-
-        public int UserId { get; set; }
 
     }
 }

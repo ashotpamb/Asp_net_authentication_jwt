@@ -35,11 +35,6 @@ namespace PingChecker.Repositories
             throw new NotImplementedException();
         }
 
-        public User GetUserByUsername(string userName)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<User> GetUsers()
         {
             throw new NotImplementedException();

@@ -5,6 +5,9 @@
 /var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/PingChecker.runtimeconfig.json
 /var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/PingChecker.dll
 /var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/PingChecker.pdb
+/var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/AutoMapper.dll
+/var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/BCrypt.Net-Next.dll
 /var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/Humanizer.dll
 /var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
@@ -51,6 +54,3 @@
 /var/www/dotnet/W5/PingChecker/obj/Debug/net7.0/PingChecker.pdb
 /var/www/dotnet/W5/PingChecker/obj/Debug/net7.0/PingChecker.genruntimeconfig.cache
 /var/www/dotnet/W5/PingChecker/obj/Debug/net7.0/ref/PingChecker.dll
-/var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/AutoMapper.dll
-/var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
-/var/www/dotnet/W5/PingChecker/bin/Debug/net7.0/BCrypt.Net-Next.dll

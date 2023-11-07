@@ -9,7 +9,8 @@ namespace PingChecker.Profiles
         public UserProfile()
         {
             CreateMap<CreateUserDto, User>();
-            // CreateMap<CommentCreateDto, Comment>();
+            CreateMap<CommentCreateDto, Comment>();
+            CreateMap<Comment, CommentReadDto>();
         }
     }
 }
