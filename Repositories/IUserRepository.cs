@@ -8,9 +8,10 @@ namespace PingChecker.Repositories
         bool SaveChanges();
         User GetUser(long ID);
         void RegisterUser(User user);
-        User FindUserByUsername(string username);
+        User FindUserByEmail(string email);
         void UpdateUserToken(User user);
         User GetUserByUsername(string userName);
+        bool CheckUserExisting(string email);
                 
     }
 }

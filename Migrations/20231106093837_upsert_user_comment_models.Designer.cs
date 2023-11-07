@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PingChecker.Data;
 
@@ -10,22 +11,24 @@ using PingChecker.Data;
 namespace PingChecker.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231106093837_upsert_user_comment_models")]
+    partial class upsert_user_comment_models
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("PingChecker.Models.Comment", b =>
+            modelBuilder.Entity("PingChecker.Models.Comments", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("CommentData")
+                    b.Property<string>("Comment")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -36,7 +39,7 @@ namespace PingChecker.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Comment");
+                    b.ToTable("Comments");
                 });
 
             modelBuilder.Entity("PingChecker.Models.User", b =>
@@ -76,7 +79,7 @@ namespace PingChecker.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("PingChecker.Models.Comment", b =>
+            modelBuilder.Entity("PingChecker.Models.Comments", b =>
                 {
                     b.HasOne("PingChecker.Models.User", "User")
                         .WithMany("Comments")

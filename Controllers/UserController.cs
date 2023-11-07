@@ -1,8 +1,5 @@
 using AutoMapper;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json;
-using PingChecker.Data;
 using PingChecker.Dtos;
 using PingChecker.Models;
 using PingChecker.Repositories;
@@ -28,15 +25,24 @@ namespace PingChecker.Controllers
         public IActionResult Register(CreateUserDto createUserDto)
         {
             var user = _mapper.Map<User>(createUserDto);
-            _userRepository.RegisterUser(user);
-            _userRepository.SaveChanges();
-            return Ok(new { Message = "User created successfully", Token = user.Token });
+            try
+            {
+                _userRepository.RegisterUser(user);
+                _userRepository.SaveChanges();
+                return Ok(new { Message = "User registred successfully", Token = user.Token });
+
+            }
+            catch (Exception ex)
+            {
+
+                return Conflict(new { Message = ex.Message });
+            }
         }
 
         [HttpPost("login")]
         public IActionResult Login([FromBody] UserLoginModel userLoginModel)
         {
-            var user = _userRepository.FindUserByUsername(userLoginModel.FirstName);
+            var user = _userRepository.FindUserByEmail(userLoginModel.Email);
 
             if (user == null)
             {
@@ -52,7 +58,7 @@ namespace PingChecker.Controllers
 
             var userData = _mapper.Map<User>(user);
 
-            return Ok(new { Token = userData.Token});
+            return Ok(new { Token = userData.Token });
         }
 
     }

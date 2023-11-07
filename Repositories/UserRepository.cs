@@ -18,10 +18,16 @@ namespace PingChecker.Repositories
             _dataContext = dataContext;
             _jwtService = jwtTokenService;
         }
-        public User FindUserByUsername(string username)
+
+        public bool CheckUserExisting(string email)
+        {
+            return _dataContext.Users.Any(u => u.Email == email);
+        }
+
+        public User FindUserByEmail(string email)
         {
 
-            return _dataContext.Users.Where(u => u.FirstName == username).FirstOrDefault();
+            return _dataContext.Users.Where(u => u.Email == email).FirstOrDefault();
         }
 
         public User GetUser(long ID)
@@ -45,10 +51,13 @@ namespace PingChecker.Repositories
             {
                 throw new ArgumentNullException(nameof(user));
             }
+            if (CheckUserExisting(user.Email))
+            {
+                throw new Exception("Email already exist");
+            }
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
             user.Password = hashedPassword;
             UpdateUserToken(user);
-            // Console.WriteLine()
             _dataContext.Add(user);
         }
 
